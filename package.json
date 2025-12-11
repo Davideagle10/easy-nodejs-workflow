@@ -1,0 +1,26 @@
+{
+  "name": "nodejs-simple-app",
+  "version": "1.0.0",
+  "description": "Simple Node.js web application for CI/CD demonstrations",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "nodemon src/index.js",
+    "test": "echo \"No tests specified yet\" && exit 0",
+    "lint": "eslint src/ --fix"
+  },
+  "keywords": ["nodejs", "express", "docker", "cicd"],
+  "author": "Tu Nombre",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
+  },
+  "dependencies": {
+    "express": "^4.18.2"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1",
+    "eslint": "^8.50.0"
+  }
+}
