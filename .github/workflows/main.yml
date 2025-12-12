@@ -14,9 +14,11 @@ jobs:
       - name: Set up Node.js
         uses: actions/setup-node@v3
         with:
-          node-version: '16'  
+          node-version: '16'      
       - run: echo "Building the Node.js application..."
       - run: npm install
+      - name: lint
+        run: npm lint
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
