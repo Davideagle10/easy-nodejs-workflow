@@ -18,7 +18,7 @@ jobs:
       - run: echo "Building the Node.js application..."
       - run: npm install
       - name: lint
-        run: npm lint
+        run: npm run lint
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
