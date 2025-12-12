@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+      - workshop-1
 jobs:
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
