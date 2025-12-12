@@ -11,6 +11,10 @@ jobs:
     steps:
       - name: Checkout the code
         uses: actions/checkout@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'  
       - run: echo "Building the Node.js application..."
       - run: npm install
   Explore-GitHub-Actions:
