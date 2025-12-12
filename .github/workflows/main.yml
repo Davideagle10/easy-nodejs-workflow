@@ -6,6 +6,13 @@ on:
       - main
       - workshop-1
 jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v5
+      - run: echo "Building the Node.js application..."
+      - run: npm install
   Explore-GitHub-Actions:
     runs-on: ubuntu-latest
     steps:
