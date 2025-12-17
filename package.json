@@ -6,7 +6,7 @@
   "scripts": {
     "start": "node src/index.js",
     "dev": "nodemon src/index.js",
-    "test": "echo \"No tests specified yet\" && exit 0",
+    "test": "echo \"No tests specified yet\"",
     "lint": "eslint src/ --fix"
   },
   "keywords": ["nodejs", "express", "docker", "cicd"],
