@@ -1,11 +1,9 @@
 name: Build and Test Node.js Application
 run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
-  schedule:
-    - cron: '*/2 * * * *'  # runs every 2 minutes
   workflow_dispatch:  
 jobs:
-  Build:
+  audit:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout the code
@@ -14,7 +12,24 @@ jobs:
         uses: actions/setup-node@v3
         with:
           node-version: '16'      
-      - run: echo "Building the Node.js application..."
-      - run: npm install
-      - run: npm audit
-  
+      - run : npm audit
+  test:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout the code
+          uses: actions/checkout@v5
+        - name: Set up Node.js
+          uses: actions/setup-node@v3
+          with:
+            node-version: '16'      
+        - run : npm install
+        - run : npm test  
+  build:
+      runs-on: ubuntu-latest
+      steps:
+        - name: Checkout the code
+          uses: actions/checkout@v5
+        - name: Build docker image
+          run: |
+            docker build -t nodejs-simple-app --file Dockerfile .
+          
