@@ -18,8 +18,9 @@ FROM node:18-alpine AS runtime
 RUN apk add --no-cache dumb-init
 
 # Create non-root user
-RUN addgroup -g 1000 appuser && \
-    adduser -D -u 1000 -G appuser appuser
+RUN addgroup appuser && \
+    adduser -D -G appuser appuser
+
 
 WORKDIR /app   
 
