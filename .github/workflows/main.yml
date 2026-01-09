@@ -3,6 +3,18 @@ run-name: ${{ github.actor }} is testing out GitHub Actions 🚀
 on: 
   workflow_dispatch:  
 jobs:
+  verify-install:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout the code
+        uses: actions/checkout@v5
+      - name: Set up Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '16'
+      - name: verify installation
+        run: npm ci
+        
   audit:
     runs-on: ubuntu-latest
     steps:
